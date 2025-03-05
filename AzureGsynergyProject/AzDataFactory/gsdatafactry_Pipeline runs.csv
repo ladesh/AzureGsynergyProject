@@ -1,4 +1,0 @@
-"Pipeline name","Run start","Run end","Duration","Triggered by","Status","Error","Run","Parameters","Annotations","Run ID"
-"load_dim_tab","3/5/2025, 10:08:43 PM","3/5/2025, 10:10:09 PM","1m 27s","Manual trigger","Succeeded","","","","[]","f1637fd6-41bc-4f20-acb7-f5adce438ab7"
-"load_dim_tab","3/5/2025, 10:08:42 PM","3/5/2025, 10:10:54 PM","2m 12s","Manual trigger","Succeeded","","","","[]","6c38f934-d3aa-4326-b008-2dd7200f7299"
-"load_dim_tab","3/5/2025, 10:08:42 PM","3/5/2025, 10:08:43 PM","Less than 1s","Manual trigger","Failed","ErrorCode=TooManyConcurrentRequests, ErrorMessage=Too many concurrent requests for the same resource, please retry again later. The tracking Id is '8d3eaf5d-0684-4450-8112-e71ebf5582dd'.","","","[]","5fc42342-3225-4936-bcde-b261c39e438c"
