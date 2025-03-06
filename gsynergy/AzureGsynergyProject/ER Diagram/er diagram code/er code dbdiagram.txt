@@ -1,0 +1,75 @@
+﻿Table fact_transactions {
+        order_id INT [primary key]
+        sku_id INT [ref: > hier_prod.sku_id]
+        fscldt_id INT [ref: > hier_clnd.fscldt_id]
+        pos_site_id INT [ref: > hier_possite.site_id]
+        price_state_id INT [ref: > hier_pricestate.substate_id]
+        quantity INT
+        total_price DECIMAL(10,2)
+}
+
+Table fact_averagecosts {
+        sku_id INT [ref: > hier_prod.sku_id]
+        fscldt_id INT [ref: > hier_clnd.fscldt_id]
+        avg_cost DECIMAL(10,2)
+        landed_cost DECIMAL(10,2)
+}
+
+Table hier_clnd {
+        fscldt_id INT [primary key]
+        date DATE
+        fiscal_year INT
+        month INT
+        week INT
+        hldy_id INT [ref: > hier_hldy.hldy_id]
+}
+
+Table hier_hldy {
+        hldy_id INT [primary key]
+        holiday_name VARCHAR(255)
+        date DATE
+}
+
+Table hier_invloc {
+        loc_id INT [primary key]
+        loc_label VARCHAR(255)
+        location_type VARCHAR(50)
+        region VARCHAR(50)
+}
+
+Table hier_invstatus {
+        code_id INT [primary key]
+        code_label VARCHAR(255)
+        status_type VARCHAR(50)
+}
+
+Table hier_possite {
+        site_id INT [primary key]
+        site_label VARCHAR(255)
+        store_type VARCHAR(50)
+        region VARCHAR(50)
+        store_id INT [ref: > hier_rtlloc.store_id]
+}
+
+Table hier_pricestate {
+        substate_id INT [primary key]
+        substate_label VARCHAR(255)
+        price_category VARCHAR(50)
+}
+
+Table hier_prod {
+        sku_id INT [primary key]
+        product_name VARCHAR(255)
+        category_id INT [ref: > hier_pricestate.substate_id]
+        department_id INT
+        brand VARCHAR(100)
+        size VARCHAR(50)
+        loc_id INT [ref: > hier_invloc.loc_id]
+}
+
+Table hier_rtlloc {
+        store_id INT [primary key]
+        district VARCHAR(50)
+        region VARCHAR(50)
+        country VARCHAR(50)
+}

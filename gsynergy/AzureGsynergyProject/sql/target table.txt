@@ -1,0 +1,1 @@
+﻿CREATE TABLE dbo.TargetTable ( Column1 INT, Column2 NVARCHAR(100), Column3 FLOAT );

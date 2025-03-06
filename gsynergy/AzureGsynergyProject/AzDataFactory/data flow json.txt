@@ -1,0 +1,288 @@
+﻿{
+        "name": "dataflow1",
+        "properties": {
+                "type": "MappingDataFlow",
+                "typeProperties": {
+                        "sources": [
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_clnd",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source1"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_hldy",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source2"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_invloc",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source3"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_invstatus",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source4"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_possite",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source5"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_pricestate",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source6"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_prod",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source7"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hier_rtlloc",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "source8"
+                                }
+                        ],
+                        "sinks": [
+                                {
+                                        "dataset": {
+                                                "referenceName": "clnd_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink1"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "hldy_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink2"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "invloc_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink3"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "invstatus_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink4"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "possite_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink5"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "pricestate_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink6"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "prod_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink7"
+                                },
+                                {
+                                        "dataset": {
+                                                "referenceName": "rtlloc_tar",
+                                                "type": "DatasetReference"
+                                        },
+                                        "name": "sink8"
+                                }
+                        ],
+                        "transformations": [],
+                        "scriptLines": [
+                                "source(output(",
+                                "                    fscldt_id as string,",
+                                "                    fscldt_label as string,",
+                                "                    fsclwk_id as string,",
+                                "                    fsclwk_label as string,",
+                                "                    fsclmth_id as string,",
+                                "                    fsclmth_label as string,",
+                                "                    fsclqrtr_id as string,",
+                                "                    fsclqrtr_label as string,",
+                                "                    fsclyr_id as string,",
+                                "                    fsclyr_label as string,",
+                                "                    ssn_id as string,",
+                                "                    ssn_label as string,",
+                                "                    ly_fscldt_id as string,",
+                                "                    lly_fscldt_id as string,",
+                                "                    fscldow as string,",
+                                "                    fscldom as string,",
+                                "                    fscldoq as string,",
+                                "                    fscldoy as string,",
+                                "                    fsclwoy as string,",
+                                "                    fsclmoy as string,",
+                                "                    fsclqoy as string,",
+                                "                    date as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source1",
+                                "source(output(",
+                                "                    hldy_id as string,",
+                                "                    hldy_label as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source2",
+                                "source(output(",
+                                "                    loc as string,",
+                                "                    loc_label as string,",
+                                "                    loctype as string,",
+                                "                    loctype_label as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source3",
+                                "source(output(",
+                                "                    code_id as string,",
+                                "                    code_label as string,",
+                                "                    bckt_id as string,",
+                                "                    bckt_label as string,",
+                                "                    ownrshp_id as string,",
+                                "                    ownrshp_label as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source4",
+                                "source(output(",
+                                "                    site_id as string,",
+                                "                    site_label as string,",
+                                "                    subchnl_id as string,",
+                                "                    subchnl_label as string,",
+                                "                    chnl_id as string,",
+                                "                    chnl_label as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source5",
+                                "source(output(",
+                                "                    substate_id as string,",
+                                "                    substate_label as string,",
+                                "                    state_id as string,",
+                                "                    state_label as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source6",
+                                "source(output(",
+                                "                    sku_id as string,",
+                                "                    sku_label as string,",
+                                "                    stylclr_id as string,",
+                                "                    stylclr_label as string,",
+                                "                    styl_id as string,",
+                                "                    styl_label as string,",
+                                "                    subcat_id as string,",
+                                "                    subcat_label as string,",
+                                "                    cat_id as string,",
+                                "                    cat_label as string,",
+                                "                    dept_id as string,",
+                                "                    dept_label as string,",
+                                "                    issvc as string,",
+                                "                    isasmbly as string,",
+                                "                    isnfs as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source7",
+                                "source(output(",
+                                "                    str as string,",
+                                "                    str_label as string,",
+                                "                    dstr as string,",
+                                "                    dstr_label as string,",
+                                "                    rgn as string,",
+                                "                    rgn_label as string",
+                                "          ),",
+                                "          allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          ignoreNoFilesFound: false) ~> source8",
+                                "source1 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink1",
+                                "source2 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {hldy_id|hldy_label} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink2",
+                                "source3 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink3",
+                                "source4 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink4",
+                                "source5 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink5",
+                                "source6 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink6",
+                                "source7 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink7",
+                                "source8 sink(allowSchemaDrift: true,",
+                                "          validateSchema: false,",
+                                "          input(",
+                                "                    {fscldt_id|fscldt_label|fsclwk_id|fsclwk_label|fsclmth_id|fsclmth_label|fsclqrtr_id|fsclqrtr_label|fsclyr_id|fsclyr_label|ssn_id|ssn_label|ly_fscldt_id|lly_fscldt_id|fscldow|fscldom|fscldoq|fscldoy|fsclwoy|fsclmoy|fsclqoy|date} as string",
+                                "          ),",
+                                "          skipDuplicateMapInputs: true,",
+                                "          skipDuplicateMapOutputs: true) ~> sink8"
+                        ]
+                }
+        }
+}

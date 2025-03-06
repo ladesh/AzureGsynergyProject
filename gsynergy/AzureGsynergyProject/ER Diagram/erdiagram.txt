@@ -1,0 +1,45 @@
+﻿Entity-Relationship Diagram (ERD) Documentation
+Overview
+The following document provides a structured explanation of the Entity-Relationship Diagram (ERD) designed for a retail data management system. This ERD is used to manage transactions, inventory, pricing, holidays, store locations, and other hierarchical data components. The schema is designed to ensure efficient data retrieval and integration across different business functions.
+Entities and Their Relationships
+1. Fact Tables
+Fact Transactions (fact_transactions)
+    • Stores transaction-level data for retail sales.
+    • Contains references to products, store locations, pricing, and fiscal dates.
+    • Tracks quantity sold and total revenue for each transaction.
+Fact Average Costs (fact_averagecosts)
+    • Stores the average cost and landed cost of each product over time.
+    • References product SKU and fiscal date for cost tracking.
+2. Dimension Tables
+Calendar (hier_clnd)
+    • Contains fiscal dates, weeks, months, and fiscal years.
+    • Establishes a link between transactions and holidays.
+Holiday (hier_hldy)
+    • Stores holiday-specific data, including holiday name and date.
+    • Helps analyze the impact of holidays on sales and pricing trends.
+Inventory Location (hier_invloc)
+    • Maintains different inventory storage locations and types.
+    • Linked to products to track stock levels across various locations.
+Inventory Status (hier_invstatus)
+    • Defines different inventory states such as available, damaged, or reserved.
+    • Helps in managing supply chain efficiency.
+Point of Sale Site (hier_possite)
+    • Represents different sales locations, such as retail stores and distribution centers.
+    • Linked to retail locations and stores.
+Price State (hier_pricestate)
+    • Stores different price categories based on location and market conditions.
+    • Helps in dynamic pricing and promotional analysis.
+Product (hier_prod)
+    • Stores product details, including category, department, brand, and size.
+    • Connected to price state and inventory location for product pricing and availability.
+Retail Location (hier_rtlloc)
+    • Defines geographic store locations based on district, region, and country.
+    • Linked to point-of-sale sites for location-specific analysis.
+Key Business Use Cases
+    1 Sales Analysis – The fact_transactions table enables the study of purchase trends, seasonal sales fluctuations, and product demand.
+    2 Inventory Management – The hier_invloc and hier_invstatus tables ensure that inventory levels are monitored and stockouts are prevented.
+    3 Pricing Strategy – The hier_pricestate table allows for the implementation of dynamic pricing models.
+    4 Holiday Impact Analysis – By linking hier_hldy with sales transactions, businesses can assess the influence of holidays on revenue.
+    5 Store Performance Evaluation – The hier_rtlloc and hier_possite tables help in analyzing store-specific performance.
+Conclusion
+This ERD provides a comprehensive structure for managing retail operations efficiently. The design ensures robust integration across key business functions such as sales tracking, inventory monitoring, pricing adjustments, and seasonal performance analysis. By implementing this schema, businesses can enhance decision-making and operational efficiency.

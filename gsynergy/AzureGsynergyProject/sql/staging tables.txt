@@ -1,0 +1,22 @@
+﻿CREATE TABLE Staging.DimRegion (
+        RegionID INT PRIMARY KEY,
+        RegionName NVARCHAR(100)
+);
+
+CREATE TABLE Staging.DimCountry (
+        CountryID INT PRIMARY KEY,
+        CountryName NVARCHAR(100),
+        RegionID INT FOREIGN KEY REFERENCES Staging.DimRegion(RegionID)
+);
+
+CREATE TABLE Staging.DimState (
+        StateID INT PRIMARY KEY,
+        StateName NVARCHAR(100),
+        CountryID INT FOREIGN KEY REFERENCES Staging.DimCountry(CountryID)
+);
+
+CREATE TABLE Staging.DimCity (
+        CityID INT PRIMARY KEY,
+        CityName NVARCHAR(100),
+        StateID INT FOREIGN KEY REFERENCES Staging.DimState(StateID)
+);
