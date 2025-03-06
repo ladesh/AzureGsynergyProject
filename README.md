@@ -1,14 +1,15 @@
-AzureGsynergyProject Documentation 
-Introduction
-AzureGsynergyProject is designed to streamline the integration and management of various Azure services. It helps organizations optimize cloud performance, reduce costs, and automate deployment processes. The project provides real-time monitoring, efficient resource management, and seamless CI/CD integration.
+AzureGsynergyProject is designed to streamline the integration and management of various Azure services. It helps organizations optimize cloud performance, reduce costs, and automate deployment processes. The project provides real-time monitoring, efficient resource management, and seamless CI/CD integration.     
 
-Objectives
+
+Objectives    
+
 Automate cloud resource provisioning to minimize manual efforts
 Optimize Azure costs and resource utilization using best practices
 Enhance monitoring and logging to improve system visibility
 Facilitate seamless integration with DevOps pipelines for continuous deployment
 Ensure scalability and modularity for future expansions
-System Requirements
+System Requirements   
+
 Before installing and running the project, ensure that you have:
 
 Operating System: Windows, macOS, or Linux
